@@ -7,7 +7,6 @@ public class Hero : MonoBehaviour
     static public Hero S;
 
     [Header("Set in Inspector")]
-    [SerializeField]
     public float speed = 30;
     public float rollMult = -45;
     public float pitchMult = 30;
@@ -17,8 +16,7 @@ public class Hero : MonoBehaviour
 
     [Header("Set Dynamically")]
     [SerializeField]
-    private float _shieldLevel = 1;
-
+    public float _shieldLevel = 1;
     private GameObject lastTriggerGo = null;
 
     
@@ -65,9 +63,10 @@ public class Hero : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        print("Collision Detected!");
         Transform rootT = other.gameObject.transform.root;
         GameObject go = rootT.gameObject;
-        // print("Triggered: " +go.name);
+        print("Triggered: " +go.name);
 
         if (go == lastTriggerGo){
             return;
@@ -95,7 +94,7 @@ public class Hero : MonoBehaviour
         set {
             _shieldLevel = Mathf.Min(value,4);
             if (value <0){
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
                 Main.S.DelayedRestart(gameRestartDelay);
             }
         }

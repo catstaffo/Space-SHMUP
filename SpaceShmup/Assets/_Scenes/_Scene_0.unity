@@ -322,9 +322,10 @@ GameObject:
   - component: {fileID: 490080760}
   - component: {fileID: 490080759}
   - component: {fileID: 490080758}
+  - component: {fileID: 490080761}
   m_Layer: 8
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 490080756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 391951357}
   m_RootOrder: 0
@@ -351,7 +352,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490080756}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -405,6 +406,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490080756}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &490080761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490080756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf09fd87d1945e84baa0e616c897fbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationsPerSecond: 0.1
+  levelShown: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +614,34 @@ MonoBehaviour:
   - {fileID: 849355410834669250, guid: 150e752633f8c38498fcff43e16d8d1e, type: 3}
   enemySpawnPerSecond: 0.5
   enemyDefaultPadding: 1.5
+  weaponDefinitions:
+  - type: 1
+    letter: B
+    color: {r: 0, g: 0, b: 0, a: 0}
+    projectilePrefab: {fileID: 6313230362556118903, guid: 24a543734ed8b0e439a0d7001fe8236e, type: 3}
+    projectileColor: {r: 0, g: 0, b: 0, a: 0}
+    damageOnHit: 1
+    continuousDamage: 0
+    delayBetweenShots: 0.2
+    velocity: 50
+  - type: 2
+    letter: S
+    color: {r: 0.14308168, g: 0.6803539, b: 0.8584906, a: 1}
+    projectilePrefab: {fileID: 6313230362556118903, guid: 24a543734ed8b0e439a0d7001fe8236e, type: 3}
+    projectileColor: {r: 0.14509805, g: 0.68235296, b: 0.85882354, a: 1}
+    damageOnHit: 1
+    continuousDamage: 0
+    delayBetweenShots: 0.4
+    velocity: 50
+  - type: 6
+    letter: O
+    color: {r: 0, g: 1, b: 0.11389899, a: 1}
+    projectilePrefab: {fileID: 0}
+    projectileColor: {r: 1, g: 1, b: 1, a: 1}
+    damageOnHit: 0
+    continuousDamage: 0
+    delayBetweenShots: 0
+    velocity: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
